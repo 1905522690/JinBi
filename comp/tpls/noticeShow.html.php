@@ -40,11 +40,12 @@
      <div class="pageNow"><a href="<?php echo WEB_APP; ?>app.html">首页</a> > <a href="<?php echo WEB_APP; ?>notice.html">行业动态</a> > <span>发行公告</span></div>
      <!--内容-->
      <div class="newShow">
-          <div class="title color1">第三届中国金币金色文化艺术大赛专业组入围名单公布</div>
-          <div class="time">发行公告　|　2015-09-07　|　来源: 中国金币市场委员会</div>
+          <?php Template::$_tplval['info'] = TagAttrLoop::emsdeital('cn_cn_news','id',''.urldecode($_GET["id"]).'','','','','','','',''); ?>
+          <div class="title color1"><?php echo Template::$_tplval['info']['title']; ?></div>
+          <div class="time">发行公告　|　<?php echo Template::$_tplval['info']['pubdate']; ?>　|　来源: <?php echo Template::$_tplval['info']['source']; ?></div>
           <div class="content">
-          123
-          </div>
+            <?php echo Template::$_tplval['info']['content']; ?>
+          </div> 
      </div>
      <!--内容End-->
 </div>

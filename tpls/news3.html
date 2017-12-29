@@ -41,7 +41,20 @@
      <!--内容-->
      <div class="news3">
         <ul>
+
+        <%loop tn="cn_cn_news" where="__typeid=233" row="4" order=" id desc" page="page"%>
           <li>
+              <div class="imgDiv"><a href=""><img width="144" height="97" src="{WEB_APP}<%$list.img_path%>"/></a></div>
+              <div class="name"><a href="{WEB_APP}news3Show/id/<%$list.id%>.html"><font color="red"><%$list.wzsx%></font><%$list.title|truncate:28%></a></div>
+              <div class="content">
+                 <%$list.content|truncate:80%>
+              </div>
+              <div class="time"><%$list.pubdate%></div>
+              <a href="{WEB_APP}news3Show/id/<%$list.id%>.html" class="btn blue">查看详情 >></a>
+          </li>
+        <%/loop%>       
+
+<!--           <li>
               <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_1.jpg"/></a></div>
               <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
               <div class="content">
@@ -49,52 +62,8 @@
               </div>
               <div class="time">2015-09-09</div>
               <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_2.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_3.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_1.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_2.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="{WEB_APP}image/nimg144_3.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
+          </li> -->
+         
         </ul>
      </div>
      <div class="pageNum">

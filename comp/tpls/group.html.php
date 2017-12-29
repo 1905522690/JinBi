@@ -39,8 +39,9 @@
 <div class="fr w725">
      <div class="pageNow"><a href="<?php echo WEB_APP; ?>app.html">首页</a> > <a href="<?php echo WEB_APP; ?>about.html">关于我们</a> > <span>委员会构架</span></div>
      <!--内容-->
+     <?php Template::$_tplval['info'] = TagAttrLoop::emsdeital('cn_about','id',''.urldecode($_GET["id"]).'','','__typeid=242','','','','',''); ?>
      <div class="about">
-        <div class="imgDiv"><img src="<?php echo WEB_APP; ?>image/nimg641.png"/></div>
+        <?php echo Template::$_tplval['info']['content']; ?>
      </div>
      <!--内容End-->
 </div>

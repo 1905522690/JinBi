@@ -37,66 +37,19 @@
       </div>
 </div>
 <div class="fr w725">
-     <div class="pageNow"><a href="">首页</a> > <a href="">行业动态</a> > <span>市场动态</span></div>
+     <div class="pageNow"><a href="<?php echo WEB_APP; ?>app.html">首页</a> > <a href="<?php echo WEB_APP; ?>notice.html">行业动态</a> > <span>市场动态</span></div>
      <!--内容-->
      <div class="news4">
         <ul>
+          <?php $_plist = TagAttrLoop::emspagelist('cn_cn_news',' id desc','4','__typeid=234','page','','',''); $_from = $_plist['all']; Template::$_tplval['page'] = $_plist['page']; Template::$_tplval['pagejson'] = json_encode($_plist['page']); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
           <li>
-              <div class="name"><a href="<?php echo WEB_APP; ?>newShow.html">1月13日热门品种点评</a></div>
+              <div class="name"><a href="<?php echo WEB_APP; ?>news4Show/id/<?php echo Template::$_tplval['list']['id']; ?>.html"><font color="red"><?php echo Template::$_tplval['list']['wzsx']; ?></font><?php echo call_user_func('truncate',Template::$_tplval['list']['title'],30); ?></a></div>
               <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
+                  <?php echo call_user_func('truncate',Template::$_tplval['list']['content'],180); ?>
               </div>
-              <div class="time">2015-09-09</div>
+              <div class="time"><?php echo Template::$_tplval['list']['pubdate']; ?></div>
           </li>
-          <li>
-              <div class="name"><a href="">1月12日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月11日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月13日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月13日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月12日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月11日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
-          <li>
-              <div class="name"><a href="">1月13日热门品种点评</a></div>
-              <div class="content">
-                  羊年贺岁小银币收到货源紧缩的节制零星成交，目前价格在380元附近，桶装及卡册价差几乎不存在。15羊年彩色、本色金银币套装行价略有回调，但受价格下调及礼品买盘推动力的影响，成交量能依旧充足，
-              </div>
-              <div class="time">2015-09-09</div>
-          </li>
+          <?php }} unset($_from);?>  
         </ul>
      </div>
      <div class="pageNum">

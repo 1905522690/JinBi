@@ -49,9 +49,9 @@
              <?php $num=explode(',', $pubdate)?>
 
              <div class="time"><div><?php echo(substr("$num[2]", 0, 1));?><b><?php echo(substr("$num[2]", 1, 2));?></b></div><?php echo($num[0]);?>.<?php echo($num[1]);?></div>
-             <div class="name"><a href="{WEB_APP}noticeShow.html"><font color="red">【<%$list.wzsx%>】</font><%$list.title%></a></div>
+             <div class="name"><a href="{WEB_APP}noticeShow/id/<%$list.id%>.html"><font color="red"><%$list.wzsx%></font><%$list.title%></a></div>
              <div class="content">
-                <%$list.content%>
+                <%$list.content|truncate:120%>
              </div>
           </li>            
           <%/loop%>

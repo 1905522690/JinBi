@@ -39,8 +39,9 @@
 <div class="fr w725">
      <div class="pageNow"><a href="">首页</a> > <a href="">规章制度</a> > <span>入会流程</span></div>
      <!--内容-->
+     <?php Template::$_tplval['info'] = TagAttrLoop::emsdeital('cn_guizh','id',''.urldecode($_GET["id"]).'','','__typeid=237','','','','',''); ?>
      <div class="about">
-        <div class="imgDiv"><img src="<?php echo WEB_APP; ?>image/nimg667.png"/></div>
+        <?php echo Template::$_tplval['info']['content']; ?>
      </div>
      <!--内容End-->
 </div>

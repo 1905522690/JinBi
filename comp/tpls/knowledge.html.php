@@ -13,7 +13,7 @@
 <script language="javascript" type="text/javascript" src="<?php echo WEB_APP; ?>script/form.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo WEB_APP; ?>script/jquery.SuperSlide.2.1.1.js"></script>
 <!--[if lte IE 6]>
-<script src="script/png.js" type="text/javascript"></script>
+<script src="<?php echo WEB_APP; ?>script/png.js" type="text/javascript"></script>
     <script type="text/javascript">
         DD_belatedPNG.fix('div, ul, img, li, input , a');
     </script>
@@ -24,36 +24,32 @@
 <div class="headDiv">
 <?php MFInclude::regincludepage('./','index_head.html'); ?>
 </div>
-<div class="sNav sNav_02">
-  <?php MFInclude::regincludepage('./','notice_left.html'); ?>
+<div class="sNav sNav_05">
+<?php MFInclude::regincludepage('./','knowledge_left.html'); ?>
 </div>
 
 <div class="wal">
 <!--wal-->
 <div class="fl sideNav">
-      <div class="title">行业动态</div>
+      <div class="title">培训学院</div>
       <div class="list">
-         <?php MFInclude::regincludepage('./','notice_left.html'); ?>
+      <?php MFInclude::regincludepage('./','knowledge_left.html'); ?>
       </div>
 </div>
 <div class="fr w725">
-     <div class="pageNow"><a href="<?php echo WEB_APP; ?>app.html">首页</a> > <a href="<?php echo WEB_APP; ?>notice.html">行业动态</a> > <span>发行公告</span></div>
+     <div class="pageNow"><a href="">首页</a> > <a href="">培训学院</a> > <span>金币知识</span></div>
      <!--内容-->
-     <div class="news listHover">
+     <div class="news4">
         <ul>
-          <?php $_plist = TagAttrLoop::emspagelist('cn_cn_news',' id desc','4','__typeid=231','page','','',''); $_from = $_plist['all']; Template::$_tplval['page'] = $_plist['page']; Template::$_tplval['pagejson'] = json_encode($_plist['page']); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
+          <?php $_plist = TagAttrLoop::emspagelist('cn_knowledge',' id desc','4','__typeid=244','page','','',''); $_from = $_plist['all']; Template::$_tplval['page'] = $_plist['page']; Template::$_tplval['pagejson'] = json_encode($_plist['page']); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
           <li>
-             <!-- 获取日期 -->
-             <?php $pubdate = Template::$_tplval['list']['pubdate'] ?>
-             <!-- 分割日期,为数组 -->
-             <?php $num=explode(',', $pubdate)?>
-
-             <div class="time"><div><?php echo(substr("$num[2]", 0, 1));?><b><?php echo(substr("$num[2]", 1, 2));?></b></div><?php echo($num[0]);?>.<?php echo($num[1]);?></div>
-             <div class="name"><a href="<?php echo WEB_APP; ?>noticeShow/id/<?php echo Template::$_tplval['list']['id']; ?>.html"><font color="red"><?php echo Template::$_tplval['list']['wzsx']; ?></font><?php echo Template::$_tplval['list']['title']; ?></a></div>
+             <div class="name"><a href="<?php echo WEB_APP; ?>knowledgeshow/id/<?php echo Template::$_tplval['list']['id']; ?>.html"><font color="red"><?php echo Template::$_tplval['list']['wzsx']; ?></font><?php echo Template::$_tplval['list']['title']; ?></a></div>
              <div class="content">
-                <?php echo call_user_func('truncate',Template::$_tplval['list']['content'],120); ?>
+                 <?php echo call_user_func('truncate',Template::$_tplval['list']['content'],120); ?>
              </div>
-          </li>            
+             <div class="time"><?php echo Template::$_tplval['list']['pubdate']; ?></div>
+             <a href="<?php echo WEB_APP; ?>knowledgeshow/id/<?php echo Template::$_tplval['list']['id']; ?>.html" class="more blue">查看详情 >></a>
+          </li>
           <?php }} unset($_from);?>
         </ul>
      </div>

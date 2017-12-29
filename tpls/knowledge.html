@@ -13,7 +13,7 @@
 <script language="javascript" type="text/javascript" src="{WEB_APP}script/form.js"></script>
 <script language="javascript" type="text/javascript" src="{WEB_APP}script/jquery.SuperSlide.2.1.1.js"></script>
 <!--[if lte IE 6]>
-<script src="script/png.js" type="text/javascript"></script>
+<script src="{WEB_APP}script/png.js" type="text/javascript"></script>
     <script type="text/javascript">
         DD_belatedPNG.fix('div, ul, img, li, input , a');
     </script>
@@ -24,28 +24,41 @@
 <div class="headDiv">
 <%include ./?index_head.html%>
 </div>
-<div class="sNav sNav_02">
-  <%include ./?notice_left.html%>
+<div class="sNav sNav_05">
+<%include ./?knowledge_left.html%>
 </div>
 
 <div class="wal">
 <!--wal-->
 <div class="fl sideNav">
-      <div class="title">行业动态</div>
+      <div class="title">培训学院</div>
       <div class="list">
-         <%include ./?notice_left.html%>
+      <%include ./?knowledge_left.html%>
       </div>
 </div>
 <div class="fr w725">
-     <div class="pageNow"><a href="{WEB_APP}app.html">首页</a> > <a href="{WEB_APP}notice.html">行业动态</a> > <span>发行公告</span></div>
+     <div class="pageNow"><a href="">首页</a> > <a href="">培训学院</a> > <span>金币知识</span></div>
      <!--内容-->
-     <div class="newShow">
-          <%row tn="cn_cn_news" fd="id" value="$id"%>
-          <div class="title color1"><%$info.title%></div>
-          <div class="time">发行公告　|　<%$info.pubdate%>　|　来源: <%$info.source%></div>
-          <div class="content">
-          <%$info.content%>
-          </div>
+     <div class="news4">
+        <ul>
+          <%loop tn="cn_knowledge" where="__typeid=244" row="4" order=" id desc" page="page"%>
+          <li>
+             <div class="name"><a href="{WEB_APP}knowledgeshow/id/<%$list.id%>.html"><font color="red"><%$list.wzsx%></font><%$list.title%></a></div>
+             <div class="content">
+                 <%$list.content|truncate:120%>
+             </div>
+             <div class="time"><%$list.pubdate%></div>
+             <a href="{WEB_APP}knowledgeshow/id/<%$list.id%>.html" class="more blue">查看详情 >></a>
+          </li>
+          <%/loop%>
+        </ul>
+     </div>
+     <div class="pageNum">
+     <a href="" class="prev"><em>上一页</em></a><a href="" class="aNow">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="" class="next"><em>下一页</em></a>
+     <span>共65页　向第</span>
+     <input type="text" class="input1" />
+     <span>页</span>
+     <input type="button" class="btn1" value="跳转" />
      </div>
      <!--内容End-->
 </div>

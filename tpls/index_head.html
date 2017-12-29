@@ -20,7 +20,7 @@
         <li><a href="{WEB_APP}about.html" <%if($_GET['PARENT_TPL_FILE']=="about.html" || $_GET['PARENT_TPL_FILE']=="group.html" || $_GET['PARENT_TPL_FILE']=="Leader.html" || $_GET['PARENT_TPL_FILE']=="Leader2.html" || $_GET['PARENT_TPL_FILE']=="Leader3.html" || $_GET['PARENT_TPL_FILE']=="Leader4.html" ){%>  class="aNow" <%}%> 
         >关于我们</a></li>
 
-        <li><a href="{WEB_APP}notice.html" <%if($_GET['PARENT_TPL_FILE']=="notice.html" || $_GET['PARENT_TPL_FILE']=="news.html" || $_GET['PARENT_TPL_FILE']=="news3.html" || $_GET['PARENT_TPL_FILE']=="news4.html" || $_GET['PARENT_TPL_FILE']=="newShow.html"){%>  class="aNow" <%}%> 
+        <li><a href="{WEB_APP}notice.html" <%if($_GET['PARENT_TPL_FILE']=="notice.html" || $_GET['PARENT_TPL_FILE']=="news.html" || $_GET['PARENT_TPL_FILE']=="news3.html" || $_GET['PARENT_TPL_FILE']=="news4.html" || $_GET['PARENT_TPL_FILE']=="newShow.html" || $_GET['PARENT_TPL_FILE']=="noticeShow.html" || $_GET['PARENT_TPL_FILE']=="news3Show.html" || $_GET['PARENT_TPL_FILE']=="news4Show.html"){%>  class="aNow" <%}%> 
         >行业动态</a></li>
         
         <li><a href="{WEB_APP}guide.html" <%if($_GET['PARENT_TPL_FILE']=="guide.html" || $_GET['PARENT_TPL_FILE']=="process.html" || $_GET['PARENT_TPL_FILE']=="process.html" || $_GET['PARENT_TPL_FILE']=="Convention.html" || $_GET['PARENT_TPL_FILE']=="Convention2.html" || $_GET['PARENT_TPL_FILE']=="Convention3.html"){%>  class="aNow" <%}%> 
@@ -28,7 +28,8 @@
 
         <li><a href="{WEB_APP}member.html">会员风采</a></li>
         <li><a href="">会员服务</a></li>
-        <li><a href="">培训学院</a></li>
+        <li><a href="{WEB_APP}knowledge.html" <%if($_GET['PARENT_TPL_FILE']=="knowledge.html" || $_GET['PARENT_TPL_FILE']=="project.html" || $_GET['PARENT_TPL_FILE']=="classroom.html" || $_GET['PARENT_TPL_FILE']=="research.html"){%>  class="aNow" <%}%> 
+        >培训学院</a></li>
         <li><a href="">联系我们</a></li>
       </ul>
     </div>

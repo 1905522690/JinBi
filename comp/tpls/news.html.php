@@ -39,14 +39,17 @@
 <div class="fr w725">
      <div class="pageNow"><a href="<?php echo WEB_APP; ?>app.html">首页</a> > <a href="<?php echo WEB_APP; ?>notice.html">行业动态</a> > <span>工作动态</span></div>
      <!--内容-->
+     <?php $_plist = TagAttrLoop::emspagelist('cn_cn_news',' id desc','4','__typeid=232','page','','',''); $_from = $_plist['all']; Template::$_tplval['page'] = $_plist['page']; Template::$_tplval['pagejson'] = json_encode($_plist['page']); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
      <div class="news_01">
-         <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg256.jpg"/></a></div>
-         <div class="name"><a href="" class="color1">金币市场专委会西北片区调研会在兰州召开</a></div>
+         <div class="imgDiv"><a href="<?php echo WEB_APP; ?>newshow/id/<?php echo Template::$_tplval['list']['id']; ?>.html"><img width="256" height="172" src="<?php echo WEB_APP; ?><?php echo Template::$_tplval['list']['img_path']; ?>"/></a></div>
+         <div class="name"><a href="<?php echo WEB_APP; ?>newShow/id/<?php echo Template::$_tplval['list']['id']; ?>.html" class="color1"><font color="red"><?php echo Template::$_tplval['list']['wzsx']; ?></font><?php echo call_user_func('truncate',Template::$_tplval['list']['title'],19); ?></a></div>
          <div class="content">
-             2015年7月9日，中国银行间市场交易商协会金币市场专业委员会（以下简称专委会）西北片区调研会在甘肃兰州召开。中国金币总公司总经理、专委会主任委员张汉桥，副总经理、专委会常务副主任委员邵军志国人民银行兰州中心支行行长罗玉冰...
+                 <?php echo call_user_func('truncate',Template::$_tplval['list']['content'],80); ?>
          </div>
-         <div class="time">2015.07.09</div>
+         <div class="time"><?php echo Template::$_tplval['list']['pubdate']; ?></div>
      </div>
+     <?php }} unset($_from);?> 
+<!-- 
      <div class="news2">
         <ul>
           <li>
@@ -56,57 +59,9 @@
                  为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
               </div>
           </li>
-          <li>
-              <div class="name"><a href="">第七届中国金币特约撰稿人会议在皖召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">适应新常态 迎接新挑战 谋求新发展 金币市场专业委员会2015年委员会议成功召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">适应新常态 迎接新挑战 谋求新发展 金币市场专业委员会2015年委员会议成功召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">2015中国金币业务培训班在成都开课</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">第七届中国金币特约撰稿人会议在皖召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">适应新常态 迎接新挑战 谋求新发展 金币市场专业委员会2015年委员会议成功召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
-          <li>
-              <div class="name"><a href="">适应新常态 迎接新挑战 谋求新发展 金币市场专业委员会2015年委员会议成功召开</a></div>
-              <div class="time">2015.09.16</div>
-              <div class="content">
-                 为加强中国金币品牌建设，深化"淬炼金银，传承文化"的企业理念，提高金币行业从业人员业务水平，更好地服务于金银币集藏群体，中国银行间市场交易商协会金币市场专业委员会...
-              </div>
-          </li>
         </ul>
      </div>
+-->    
      <div class="pageNum">
      <a href="" class="prev"><em>上一页</em></a><a href="" class="aNow">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="" class="next"><em>下一页</em></a>
      <span>共65页　向第</span>

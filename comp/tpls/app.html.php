@@ -41,7 +41,7 @@
     <div class="list">
       <ul>
     <?php $_from = TagAttrLoop::emslist('cn_home_banner','id desc','__typeid=228','5','','','','',''); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
-        <li><a href=""><img src="<?php echo WEB_APP; ?><?php echo Template::$_tplval['list']['img_path']; ?>"/></a></li>
+        <li><a href=""><img width="679" height="324" src="<?php echo WEB_APP; ?><?php echo Template::$_tplval['list']['img_path']; ?>"/></a></li>
     <?php }} unset($_from);?> 
       </ul>
     </div>

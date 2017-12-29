@@ -41,7 +41,20 @@
      <!--内容-->
      <div class="news3">
         <ul>
+
+        <?php $_plist = TagAttrLoop::emspagelist('cn_cn_news',' id desc','4','__typeid=233','page','','',''); $_from = $_plist['all']; Template::$_tplval['page'] = $_plist['page']; Template::$_tplval['pagejson'] = json_encode($_plist['page']); if (!is_array($_from) && !is_object($_from)){ settype($_from, 'array'); }if (count($_from)){foreach($_from as $key=>Template::$_tplval['list']){ ?>
           <li>
+              <div class="imgDiv"><a href=""><img width="144" height="97" src="<?php echo WEB_APP; ?><?php echo Template::$_tplval['list']['img_path']; ?>"/></a></div>
+              <div class="name"><a href="<?php echo WEB_APP; ?>news3Show/id/<?php echo Template::$_tplval['list']['id']; ?>.html"><font color="red"><?php echo Template::$_tplval['list']['wzsx']; ?></font><?php echo call_user_func('truncate',Template::$_tplval['list']['title'],28); ?></a></div>
+              <div class="content">
+                 <?php echo call_user_func('truncate',Template::$_tplval['list']['content'],80); ?>
+              </div>
+              <div class="time"><?php echo Template::$_tplval['list']['pubdate']; ?></div>
+              <a href="<?php echo WEB_APP; ?>news3Show/id/<?php echo Template::$_tplval['list']['id']; ?>.html" class="btn blue">查看详情 >></a>
+          </li>
+        <?php }} unset($_from);?>       
+
+<!--           <li>
               <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_1.jpg"/></a></div>
               <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
               <div class="content">
@@ -49,52 +62,8 @@
               </div>
               <div class="time">2015-09-09</div>
               <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_2.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_3.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_1.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_2.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
-          <li>
-              <div class="imgDiv"><a href=""><img src="<?php echo WEB_APP; ?>image/nimg144_3.jpg"/></a></div>
-              <div class="name"><a href="">黑龙江银丰与工商银行联办贵金属臻品鉴赏会</a></div>
-              <div class="content">
-                 值"中秋、国庆"双节之际，黑龙江银丰公司于9月25日与工商银行七台河支行联合举办了贵金属臻品鉴赏会，该行高端客户应邀参加。
-              </div>
-              <div class="time">2015-09-09</div>
-              <a href="" class="btn blue">查看详情 >></a>
-          </li>
+          </li> -->
+         
         </ul>
      </div>
      <div class="pageNum">
